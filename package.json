@@ -1,0 +1,19 @@
+{
+  "name": "stunt",
+  "version": "0.0.1",
+  "description": "The Stunt mocking library",
+  "main": "stunt.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cerebralio/stunt.git"
+  },
+  "author": "Alex Scheel Meyer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cerebralio/stunt/issues"
+  },
+  "homepage": "https://github.com/cerebralio/stunt#readme"
+}
