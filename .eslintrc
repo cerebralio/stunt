@@ -1,0 +1,12 @@
+{
+  "env": {
+    "node": true,
+    "mocha": true,
+  },
+  "extends": "airbnb-base",
+  "rules": {
+    "arrow-parens": ["error", "always"],
+    "no-param-reassign": ["error", { "props": false }],
+    "no-underscore-dangle": 0,
+  }
+}

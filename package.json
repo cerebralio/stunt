@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/cerebralio/stunt/issues"
   },
-  "homepage": "https://github.com/cerebralio/stunt#readme"
+  "homepage": "https://github.com/cerebralio/stunt#readme",
+  "dependencies": {
+    "lodash": "4.17.2"
+  }
 }
