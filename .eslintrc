@@ -6,7 +6,10 @@
   "extends": "airbnb-base",
   "rules": {
     "arrow-parens": ["error", "always"],
-    "no-param-reassign": ["error", { "props": false }],
+    "no-param-reassign": 0,
     "no-underscore-dangle": 0,
+    "class-methods-use-this": 0,
+    "no-plusplus": 0,
+
   }
 }
