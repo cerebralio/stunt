@@ -1,11 +1,17 @@
 const _ = require('lodash');
 
-function _mock() {
+function _mock(...args) {
   this.called = true;
   this.callCount++;
   switch (this._action) {
     case 'return':
       return this._returnValue;
+    case 'yield': {
+      const callback = _.find(args, _.isFunction);
+      if (callback) callback(...this._yieldArgs);
+
+      break;
+    }
     default:
   }
 

@@ -1,6 +1,6 @@
 {
   "name": "stunt",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The Stunt mocking library",
   "main": "stunt.js",
   "scripts": {
