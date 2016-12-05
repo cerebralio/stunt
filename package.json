@@ -1,10 +1,11 @@
 {
   "name": "stunt",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "The Stunt mocking library",
   "main": "stunt.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "node_modules/.bin/istanbul --include-all-sources cover -x integration/**/*.js --print detail node_modules/.bin/_mocha -- -R spec --recursive test/ && node_modules/.bin/istanbul check-coverage --lines 100 --statement 100 --function 100 --branch 100",
+    "lint": "./node_modules/.bin/eslint '*.js' './test/**/*.js'"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,13 @@
   "homepage": "https://github.com/cerebralio/stunt#readme",
   "dependencies": {
     "lodash": "4.17.2"
+  },
+  "devDependencies": {
+    "chai": "3.5.0",
+    "eslint": "3.11.1",
+    "eslint-config-airbnb-base": "10.0.1",
+    "eslint-plugin-import": "2.2.0",
+    "istanbul": "0.4.5",
+    "mocha": "3.2.0"
   }
 }
