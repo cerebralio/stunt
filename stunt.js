@@ -14,11 +14,13 @@ function _mock(...args) {
       callback(...this._yieldArgs);
       break;
     }
+    case 'throw':
+      throw this._yieldArgs;
     case 'invoke':
       args[this._argIndex](...this._yieldArgs);
       break;
     case 'call': {
-      const target = this._yieldArgs[0];
+      const target = this._yieldArgs;
       return target(...args);
     }
   }
@@ -40,7 +42,7 @@ function calls(target) {
   if (!_.isFunction(target)) throw new Error('target must be a function');
 
   this._action = 'call';
-  this._yieldArgs = [target];
+  this._yieldArgs = target;
   return this._mock;
 }
 
@@ -52,6 +54,12 @@ function yields(...args) {
 
 function returns(value) {
   this._returnValue = value;
+  return this._mock;
+}
+
+function throws(throwObj) {
+  this._action = 'throw';
+  this._yieldArgs = throwObj;
   return this._mock;
 }
 
@@ -67,6 +75,7 @@ function makeContext() {
     yields,
     returns,
     invokes,
+    throws,
     calls,
   };
 

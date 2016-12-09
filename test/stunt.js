@@ -70,6 +70,12 @@ describe('Stunt', () => {
     });
   });
 
+  it('should allow mocking a function to throw', () => {
+    const throwError = new Error('no-worky');
+    const mock = stunt.function().throws(throwError);
+    expect(() => mock()).to.throw(throwError);
+  });
+
   it('should allow spying on a function', () => {
     const spy = stunt.spy(() => 'spied on');
     expect(spy()).to.equal('spied on');
