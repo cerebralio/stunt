@@ -106,6 +106,19 @@ describe('Stunt', () => {
     const obj = { a: () => 'hello world' };
     stunt.replace(obj, 'a');
     expect(obj.a()).to.equal(undefined);
+    expect(obj.a.called).to.be.true;
+    expect(obj.a.callCount).to.equal(1);
+  });
+
+  it('should throw when trying to replace non-existing property', () => {
+    expect(() => stunt.replace({}, 'a')).to.throw();
+  });
+
+  it('should return spy when replacing', () => {
+    const spy = stunt.replace({ a: () => 'hello world' }, 'a', stunt.function().returns('fromspy'));
+    expect(spy()).to.equal('fromspy');
+    expect(spy.called).to.be.true;
+    expect(spy.callCount).to.equal(1);
   });
 
   it('should allow spying on an object property', () => {

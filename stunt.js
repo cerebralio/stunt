@@ -132,10 +132,14 @@ class Stunt {
   }
 
   replace(obj, property, func) {
+    if (!(property in obj))
+      throw new Error(`Property ${property} not present to be replaced`);
+
     const oldValue = obj[property];
     const newFunc = func !== undefined ? func : this.function();
     this.mockings.push({ obj, property, oldValue });
     obj[property] = newFunc;
+    return newFunc;
   }
 
   spyOn(obj, property) {
