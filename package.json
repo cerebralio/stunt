@@ -1,6 +1,6 @@
 {
   "name": "stunt",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "The Stunt mocking library",
   "main": "stunt.js",
   "scripts": {
@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/cerebralio/stunt#readme",
   "dependencies": {
-    "lodash": "4.17.2"
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
     "chai": "3.5.0",
@@ -26,6 +26,6 @@
     "eslint-config-airbnb-base": "10.0.1",
     "eslint-plugin-import": "2.2.0",
     "istanbul": "0.4.5",
-    "mocha": "3.2.0"
+    "mocha": "^5.2.0"
   }
 }
