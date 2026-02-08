@@ -20,11 +20,20 @@ Creates a mock function with customizable behavior.
 - `.invokes(index, args)` - Invokes a parameter at the given index with the provided arguments
 - `.throws(error)` - Throws an error
 
+**Importing**
+```javascript
+const stunt = require('stunt');
+
+// or ES6:
+
+import stunt from 'stunt';
+```
+
+In both cases you will have an _instance_ of Stunt. On the instance you can find `.Stunt` which
+is the class, so you can make new instances if you need to.
+
 **Example:**
 ```javascript
-const { Stunt } = require('stunt');
-const stunt = new Stunt();
-
 // Return a value
 const mock = stunt.function().returns(42);
 console.log(mock()); // 42
